@@ -39,7 +39,7 @@ jobs:
         shell: bash
         run: |
           set -o pipefail
-          godot --headless --verbose --export-debug "Android" ./build/android/${EXPORT_NAME}.apk 2>&1 | tee ci-logs/last-export-log.txt
+          stdbuf -oL -eL godot --headless --verbose --export-debug "Android" ./build/android/${EXPORT_NAME}.apk 2>&1 | tee ci-logs/last-export-log.txt
 
       - name: Save log on failure
         if: failure()
