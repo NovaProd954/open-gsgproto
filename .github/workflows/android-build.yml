@@ -7,6 +7,9 @@ on:
     branches: [ main ]
   workflow_dispatch: {}
 
+permissions:
+  contents: write
+
 env:
   GODOT_VERSION: "4.5"
   EXPORT_NAME: opengsgproto
@@ -29,11 +32,25 @@ jobs:
           mv /root/.config/godot ~/.config/godot
 
       - name: Make build dir
-        run: mkdir -v -p build/android
+        run: mkdir -v -p build/android ci-logs
 
       - name: Export debug APK
+        id: export
         run: |
-          godot --headless --verbose --export-debug "Android" ./build/android/${EXPORT_NAME}.apk
+          set -o pipefail
+          godot --headless --verbose --export-debug "Android" ./build/android/${EXPORT_NAME}.apk 2>&1 | tee ci-logs/last-export-log.txt
+
+      - name: Save log on failure
+        if: failure()
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          git config user.email "ci@opengsgproto.local"
+          git config user.name "CI Log Bot"
+          git add ci-logs/last-export-log.txt
+          git commit -m "ci: capture failed export log [skip ci]" || echo "nothing to commit"
+          git push "https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git" HEAD:${{ github.ref_name }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
@@ -41,3 +58,4 @@ jobs:
           name: ${{ env.EXPORT_NAME }}-debug-apk
           path: build/android/${{ env.EXPORT_NAME }}.apk
           if-no-files-found: error
+
