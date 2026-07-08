@@ -439,20 +439,11 @@ Could not find version of build tools that matches Target SDK, using 33.0.2
 [   0% ] [90m[1mfirst_scan_filesystem[22m | Started Project initialization (5 steps)[39m[0m
 [  16% ] [90m[1mfirst_scan_filesystem[22m | Loading global class names...[39m[0m
 [  33% ] [90m[1mfirst_scan_filesystem[22m | Verifying GDExtensions...[39m[0m
-ERROR: Condition "!FileAccess::exists(path)" is true. Returning: ERR_FILE_NOT_FOUND
-   at: open_dynamic_library (drivers/unix/os_unix.cpp:1057)
-ERROR: GDExtension dynamic library not found: 'res://addons/map_editor/map_editor.gdextension'.
-   at: open_library (core/extension/gdextension.cpp:727)
 [  50% ] [90m[1mfirst_scan_filesystem[22m | Creating autoload scripts...[39m[0m
 [  66% ] [90m[1mfirst_scan_filesystem[22m | Initializing plugins...[39m[0m
 Loading resource: res://addons/map_editor/country_editor.gd
 Loading resource: /github/home/.cache/godot/editor_doc_cache-4.5.res
-SCRIPT ERROR: Parse Error: Could not find type "CountryInspector" in the current scope.
-          at: GDScript::reload (res://addons/map_editor/country_editor.gd:4)
-SCRIPT ERROR: Parse Error: Could not resolve script "res://addons/map_editor/country_inspector.gd".
-          at: GDScript::reload (res://addons/map_editor/country_editor.gd:7)
-ERROR: Failed to load script "res://addons/map_editor/country_editor.gd" with error "Parse error".
-   at: load (modules/gdscript/gdscript.cpp:3041)
+Loading resource: res://addons/map_editor/inspector_theme.tres
 [  83% ] [90m[1mfirst_scan_filesystem[22m | Starting file scan...[39m[0m
 [92m[ DONE ][39m [1mfirst_scan_filesystem[22m
 [0m
@@ -460,13 +451,7 @@ GDScript: Reloading all scripts
 GDScript: Found: res://addons/map_editor/country_inspector.gd
 GDScript: Found: res://addons/map_editor/country_editor.gd
 GDScript: Reloading: res://addons/map_editor/country_inspector.gd
-SCRIPT ERROR: Parse Error: Could not find base class "CountryInspector".
-          at: GDScript::reload (res://addons/map_editor/country_inspector.gd:1)
 GDScript: Reloading: res://addons/map_editor/country_editor.gd
-SCRIPT ERROR: Parse Error: Could not find type "CountryInspector" in the current scope.
-          at: GDScript::reload (res://addons/map_editor/country_editor.gd:4)
-SCRIPT ERROR: Parse Error: Could not resolve script "res://addons/map_editor/country_inspector.gd".
-          at: GDScript::reload (res://addons/map_editor/country_editor.gd:7)
 [   0% ] [90m[1mupdate_scripts_classes[22m | Started Registering global classes... (5 steps)[39m[0m
 [   0% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
 [  16% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
@@ -489,10 +474,6 @@ SCRIPT ERROR: Parse Error: Could not resolve script "res://addons/map_editor/cou
 [  83% ] [90m[1m_update_scan_actions[22m | icon.svg[39m[0m
 [92m[ DONE ][39m [1m_update_scan_actions[22m
 [0m
-ERROR: Condition "!FileAccess::exists(path)" is true. Returning: ERR_FILE_NOT_FOUND
-   at: open_dynamic_library (drivers/unix/os_unix.cpp:1057)
-ERROR: GDExtension dynamic library not found: 'res://addons/map_editor/map_editor.gdextension'.
-   at: open_library (core/extension/gdextension.cpp:727)
 [   0% ] [90m[1mreimport[22m | Started (Re)Importing Assets (10 steps)[39m[0m
 [   0% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
 [   9% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
@@ -501,7 +482,6 @@ ERROR: GDExtension dynamic library not found: 'res://addons/map_editor/map_edito
 [  36% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
 [  45% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
 [  54% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
-Loading resource: /github/home/.cache/godot/editor_doc_cache-4.5.res
 [  63% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
 [  72% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
 [  81% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
@@ -510,33 +490,33 @@ Loading resource: /github/home/.cache/godot/editor_doc_cache-4.5.res
 EditorFileSystem: Importing file: res://shaders/generate_color_lookup.glsl
 EditorFileSystem: Importing file: res://shaders/generate_borders.glsl
 EditorFileSystem: Importing file: res://shaders/generate_color_map.glsl
-EditorFileSystem: "res://shaders/generate_borders.glsl" import took 203 ms.
+EditorFileSystem: "res://shaders/generate_color_lookup.glsl" import took 84 ms.
 EditorFileSystem: Importing file: res://shaders/mask_political_map.glsl
 [   9% ] [90m[1mreimport[22m | generate_color_lookup.glsl[39m[0m
-EditorFileSystem: "res://shaders/generate_color_lookup.glsl" import took 204 ms.
+EditorFileSystem: "res://shaders/generate_color_map.glsl" import took 84 ms.
+EditorFileSystem: "res://shaders/generate_borders.glsl" import took 84 ms.
 [  18% ] [90m[1mreimport[22m | generate_color_map.glsl[39m[0m
-EditorFileSystem: "res://shaders/generate_color_map.glsl" import took 203 ms.
 [  27% ] [90m[1mreimport[22m | mask_political_map.glsl[39m[0m
-EditorFileSystem: "res://shaders/mask_political_map.glsl" import took 4 ms.
+EditorFileSystem: "res://shaders/mask_political_map.glsl" import took 2 ms.
 EditorFileSystem: Importing file: res://assets/colormap_water.png
-[  36% ] [90m[1mreimport[22m | generate_borders.glsl[39m[0m
 EditorFileSystem: Importing file: res://assets/color_lookup_map.png
 EditorFileSystem: Importing file: res://assets/color_map.png
-etcpak: Encoding took 13 ms.
-EditorFileSystem: "res://assets/color_map.png" import took 180 ms.
+[  36% ] [90m[1mreimport[22m | generate_borders.glsl[39m[0m
+EditorFileSystem: "res://assets/color_map.png" import took 9 ms.
 EditorFileSystem: Importing file: res://assets/mask_political_map.png
 [  45% ] [90m[1mreimport[22m | generate_color_lookup.glsl[39m[0m
-EditorFileSystem: "res://assets/colormap_water.png" import took 203 ms.
+etcpak: Encoding took 11 ms.
+EditorFileSystem: "res://assets/colormap_water.png" import took 116 ms.
 EditorFileSystem: Importing file: res://assets/provinces.bmp
 [  54% ] [90m[1mreimport[22m | generate_color_map.glsl[39m[0m
-EditorFileSystem: "res://assets/color_lookup_map.png" import took 675 ms.
+EditorFileSystem: "res://assets/mask_political_map.png" import took 535 ms.
 EditorFileSystem: Importing file: res://icon.svg
 [  63% ] [90m[1mreimport[22m | mask_political_map.glsl[39m[0m
 EditorFileSystem: "res://icon.svg" import took 3 ms.
 [  72% ] [90m[1mreimport[22m | colormap_water.png[39m[0m
-EditorFileSystem: "res://assets/mask_political_map.png" import took 558 ms.
+EditorFileSystem: "res://assets/color_lookup_map.png" import took 654 ms.
 [  81% ] [90m[1mreimport[22m | color_lookup_map.png[39m[0m
-EditorFileSystem: "res://assets/provinces.bmp" import took 649 ms.
+EditorFileSystem: "res://assets/provinces.bmp" import took 609 ms.
 [  90% ] [90m[1mreimport[22m | Finalizing Asset Import...[39m[0m
 [92m[ DONE ][39m [1mreimport[22m
 [0m
@@ -550,22 +530,101 @@ ERROR: Cannot export project with preset "Android" due to configuration errors:
    at: _fs_changed (editor/editor_node.cpp:1259)
 ERROR: Project export for preset "Android" failed.
    at: _fs_changed (editor/editor_node.cpp:1275)
-GDScript: Reloading all scripts
-GDScript: Found: res://addons/map_editor/country_inspector.gd
-GDScript: Found: res://addons/map_editor/country_editor.gd
-GDScript: Reloading: res://addons/map_editor/country_inspector.gd
-SCRIPT ERROR: Parse Error: Could not find base class "CountryInspector".
-          at: GDScript::reload (res://addons/map_editor/country_inspector.gd:1)
-GDScript: Reloading: res://addons/map_editor/country_editor.gd
-SCRIPT ERROR: Parse Error: Could not find type "CountryInspector" in the current scope.
-          at: GDScript::reload (res://addons/map_editor/country_editor.gd:4)
-SCRIPT ERROR: Parse Error: Could not resolve script "res://addons/map_editor/country_inspector.gd".
-          at: GDScript::reload (res://addons/map_editor/country_editor.gd:7)
+Unloading addon: res://addons/map_editor/plugin.cfg
 Script docs haven't been properly loaded or regenerated, so don't save them to disk.
-cannot connect to daemon at tcp:5037: Connection refused
 EditorSettings: Save OK!
 XR: Clearing primary interface
 XR: Removed interface "Native mobile"
 XR: Removed interface "OpenXR"
-Orphan StringName: Node (static: 5, total: 6)
-StringName: 1 unclaimed string names at exit.
+Orphan StringName: RDShaderSPIRV (static: 1, total: 3)
+Orphan StringName: RenderingDevice (static: 1, total: 3)
+Orphan StringName: Mesh (static: 1, total: 3)
+Orphan StringName: Tween (static: 1, total: 3)
+Orphan StringName: HScrollBar (static: 1, total: 3)
+Orphan StringName: ColorPicker (static: 1, total: 3)
+Orphan StringName: Shader (static: 1, total: 3)
+Orphan StringName: Tree (static: 33, total: 35)
+Orphan StringName: RDFramebufferPass (static: 1, total: 3)
+Orphan StringName: LineEdit (static: 7, total: 9)
+Orphan StringName: RDVertexAttribute (static: 1, total: 3)
+Orphan StringName: MainLoop (static: 1, total: 3)
+Orphan StringName: Label (static: 13, total: 15)
+Orphan StringName: TriangleMesh (static: 1, total: 3)
+Orphan StringName: InputEvent (static: 1, total: 3)
+Orphan StringName: Control (static: 4, total: 6)
+Orphan StringName: Shape3D (static: 1, total: 3)
+Orphan StringName: Input (static: 1, total: 3)
+Orphan StringName: RDSamplerState (static: 1, total: 3)
+Orphan StringName: ResourceLoader (static: 1, total: 3)
+Orphan StringName: ComputeHelper (static: 0, total: 2)
+Orphan StringName: Button (static: 3, total: 5)
+Orphan StringName: RDShaderFile (static: 1, total: 3)
+Orphan StringName: CameraController (static: 0, total: 2)
+Orphan StringName: RDPipelineMultisampleState (static: 1, total: 3)
+Orphan StringName: ScriptLanguage (static: 1, total: 3)
+Orphan StringName: Font (static: 1, total: 3)
+Orphan StringName: VBoxContainer (static: 1, total: 3)
+Orphan StringName: Node3DGizmo (static: 1, total: 3)
+Orphan StringName: RenderingServer (static: 1, total: 3)
+Orphan StringName: Image (static: 1, total: 3)
+Orphan StringName: Resource (static: 1, total: 3)
+Orphan StringName: CountryData (static: 0, total: 2)
+Orphan StringName: Popup (static: 2, total: 4)
+Orphan StringName: Viewport (static: 1, total: 3)
+Orphan StringName: ItemList (static: 2, total: 4)
+Orphan StringName: RDPipelineDepthStencilState (static: 1, total: 3)
+Orphan StringName: MultiplayerAPI (static: 1, total: 3)
+Orphan StringName: Timer (static: 1, total: 3)
+Orphan StringName: DisplayServer (static: 1, total: 3)
+Orphan StringName: FileAccess (static: 1, total: 3)
+Orphan StringName: ButtonGroup (static: 1, total: 3)
+Orphan StringName: ConcavePolygonShape3D (static: 1, total: 3)
+Orphan StringName: CanvasItem (static: 1, total: 3)
+Orphan StringName: Node3D (static: 4, total: 6)
+Orphan StringName: RDAttachmentFormat (static: 1, total: 3)
+Orphan StringName: BoxContainer (static: 1, total: 3)
+Orphan StringName: SceneTree (static: 1, total: 3)
+Orphan StringName: ScrollContainer (static: 1, total: 3)
+Orphan StringName: PopupPanel (static: 1, total: 3)
+Orphan StringName: NativeMenu (static: 1, total: 3)
+Orphan StringName: Container (static: 1, total: 3)
+Orphan StringName: Texture (static: 1, total: 3)
+Orphan StringName: CanvasLayer (static: 1, total: 3)
+Orphan StringName: World2D (static: 1, total: 3)
+Orphan StringName: World3D (static: 1, total: 3)
+Orphan StringName: Material (static: 1, total: 3)
+Orphan StringName: Node (static: 5, total: 8)
+Orphan StringName: DirAccess (static: 1, total: 3)
+Orphan StringName: CountryInspector (static: 0, total: 2)
+Orphan StringName: TextServer (static: 1, total: 3)
+Orphan StringName: RefCounted (static: 1, total: 3)
+Orphan StringName: Engine (static: 1, total: 3)
+Orphan StringName: Object (static: 5, total: 7)
+Orphan StringName: RDUniform (static: 1, total: 3)
+Orphan StringName: Theme (static: 1, total: 3)
+Orphan StringName: LabelSettings (static: 1, total: 3)
+Orphan StringName: RDPipelineRasterizationState (static: 1, total: 3)
+Orphan StringName: RDTextureView (static: 1, total: 3)
+Orphan StringName: RichTextLabel (static: 1, total: 3)
+Orphan StringName: Shortcut (static: 1, total: 3)
+Orphan StringName: HBoxContainer (static: 1, total: 3)
+Orphan StringName: RDPipelineSpecializationConstant (static: 1, total: 3)
+Orphan StringName: ConvexPolygonShape3D (static: 1, total: 3)
+Orphan StringName: RDTextureFormat (static: 1, total: 3)
+Orphan StringName: ResourceFormatLoader (static: 1, total: 3)
+Orphan StringName: MultiMesh (static: 1, total: 3)
+Orphan StringName: RDPipelineColorBlendState (static: 1, total: 3)
+Orphan StringName: ScrollBar (static: 1, total: 3)
+Orphan StringName: TreeItem (static: 1, total: 3)
+Orphan StringName: EditorInspectorPlugin (static: 1, total: 3)
+Orphan StringName: Texture2D (static: 1, total: 3)
+Orphan StringName: Window (static: 6, total: 8)
+Orphan StringName: StyleBox (static: 1, total: 3)
+Orphan StringName: Range (static: 1, total: 3)
+Orphan StringName: RDShaderSource (static: 1, total: 3)
+Orphan StringName: ClassDB (static: 1, total: 3)
+Orphan StringName: MapData (static: 0, total: 2)
+Orphan StringName: VScrollBar (static: 1, total: 3)
+Orphan StringName: BaseButton (static: 1, total: 3)
+Orphan StringName: PopupMenu (static: 2, total: 4)
+StringName: 91 unclaimed string names at exit.
