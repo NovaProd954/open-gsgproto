@@ -1,0 +1,10 @@
+# Godot 4 ignores
+.godot/
+.import/
+export.cfg
+export_credentials.cfg
+build/
+*.translation
+*.pck
+*.apk
+*.aab
