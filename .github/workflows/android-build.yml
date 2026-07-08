@@ -36,12 +36,14 @@ jobs:
 
       - name: Export debug APK
         id: export
+        shell: bash
         run: |
           set -o pipefail
           godot --headless --verbose --export-debug "Android" ./build/android/${EXPORT_NAME}.apk 2>&1 | tee ci-logs/last-export-log.txt
 
       - name: Save log on failure
         if: failure()
+        shell: bash
         run: |
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
           git config user.email "ci@opengsgproto.local"
