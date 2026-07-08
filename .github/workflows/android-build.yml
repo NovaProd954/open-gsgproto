@@ -34,6 +34,24 @@ jobs:
       - name: Make build dir
         run: mkdir -v -p build/android ci-logs
 
+      - name: Diagnose Android/editor config
+        shell: bash
+        run: |
+          {
+            echo "== env =="
+            env | grep -i -E "android|godot|home" || true
+            echo "== which adb / sdk tools =="
+            which adb || echo "adb not found"
+            echo "== editor_settings tres (keystore/sdk lines) =="
+            find ~/.config/godot /root/.config/godot -name "editor_settings-*.tres" 2>/dev/null -exec echo "-- {} --" \; -exec grep -i -E "keystore|android_sdk|adb" {} \; || true
+            echo "== looking for debug.keystore on disk =="
+            find / -iname "debug.keystore" 2>/dev/null || true
+            echo "== looking for android sdk dirs =="
+            find / -maxdepth 4 -iname "*android*sdk*" -o -iname "cmdline-tools" 2>/dev/null | head -30 || true
+            echo "== build-tools dirs =="
+            find / -maxdepth 6 -path "*build-tools*" -type d 2>/dev/null | head -30 || true
+          } | tee ci-logs/diagnose.txt
+
       - name: Export debug APK
         id: export
         shell: bash
@@ -48,7 +66,7 @@ jobs:
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
           git config user.email "ci@opengsgproto.local"
           git config user.name "CI Log Bot"
-          git add ci-logs/last-export-log.txt
+          git add ci-logs/
           git commit -m "ci: capture failed export log [skip ci]" || echo "nothing to commit"
           git push "https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git" HEAD:${{ github.ref_name }}
         env:
