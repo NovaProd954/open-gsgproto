@@ -3,7 +3,7 @@ GITHUB_WORKFLOW_REF=NovaProd954/open-gsgproto/.github/workflows/android-build.ym
 HOME=/github/home
 GODOT_VERSION=4.5
 ANDROID_HOME=/usr/lib/android-sdk
-ACTIONS_ORCHESTRATION_ID=707ef482-d567-4f61-99bb-20bbc1c42c4c.export-android-debug.__default
+ACTIONS_ORCHESTRATION_ID=236e0c1f-e98c-4904-b21c-1fe3fb648c48.export-android-debug.__default
 GITHUB_JOB=export-android-debug
 PATH=/usr/lib/android-sdk/cmdline-tools/cmdline-tools/bin:/opt/butler/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 GITHUB_WORKFLOW=Android Debug Build
@@ -35,11 +35,48 @@ export/android/shutdown_adb_on_exit = true
 /usr/lib/android-sdk/build-tools/33.0.2/renderscript
 == android_source.zip (gradle build template) ==
 /github/home/.local/share/godot/export_templates/4.5.stable/android_source.zip
+== full export_templates dir listing ==
+/github/home/.local/share/godot/export_templates/4.5.stable/ios.zip
+/github/home/.local/share/godot/export_templates/4.5.stable/web_dlink_debug.zip
+/github/home/.local/share/godot/export_templates/4.5.stable/windows_debug_arm64.exe
+/github/home/.local/share/godot/export_templates/4.5.stable/android_release.apk
+/github/home/.local/share/godot/export_templates/4.5.stable/version.txt
+/github/home/.local/share/godot/export_templates/4.5.stable/android_source.zip
+/github/home/.local/share/godot/export_templates/4.5.stable/linux_debug.x86_32
+/github/home/.local/share/godot/export_templates/4.5.stable/icudt_godot.dat
+/github/home/.local/share/godot/export_templates/4.5.stable/linux_release.arm64
+/github/home/.local/share/godot/export_templates/4.5.stable/windows_debug_x86_64_console.exe
+/github/home/.local/share/godot/export_templates/4.5.stable/windows_release_x86_64.exe
+/github/home/.local/share/godot/export_templates/4.5.stable/linux_release.arm32
+/github/home/.local/share/godot/export_templates/4.5.stable/linux_debug.arm32
+/github/home/.local/share/godot/export_templates/4.5.stable/web_debug.zip
+/github/home/.local/share/godot/export_templates/4.5.stable/windows_release_x86_32.exe
+/github/home/.local/share/godot/export_templates/4.5.stable/web_dlink_release.zip
+/github/home/.local/share/godot/export_templates/4.5.stable/macos.zip
+/github/home/.local/share/godot/export_templates/4.5.stable/linux_debug.arm64
+/github/home/.local/share/godot/export_templates/4.5.stable/windows_release_arm64.exe
+/github/home/.local/share/godot/export_templates/4.5.stable/web_nothreads_debug.zip
+/github/home/.local/share/godot/export_templates/4.5.stable/linux_debug.x86_64
+/github/home/.local/share/godot/export_templates/4.5.stable/windows_debug_arm64_console.exe
+/github/home/.local/share/godot/export_templates/4.5.stable/windows_debug_x86_32_console.exe
+/github/home/.local/share/godot/export_templates/4.5.stable/web_release.zip
+/github/home/.local/share/godot/export_templates/4.5.stable/windows_debug_x86_32.exe
+/github/home/.local/share/godot/export_templates/4.5.stable/windows_debug_x86_64.exe
+/github/home/.local/share/godot/export_templates/4.5.stable/web_dlink_nothreads_debug.zip
+/github/home/.local/share/godot/export_templates/4.5.stable/android_debug.apk
+/github/home/.local/share/godot/export_templates/4.5.stable/linux_release.x86_64
+/github/home/.local/share/godot/export_templates/4.5.stable/web_nothreads_release.zip
+/github/home/.local/share/godot/export_templates/4.5.stable/linux_release.x86_32
+/github/home/.local/share/godot/export_templates/4.5.stable/windows_release_arm64_console.exe
+/github/home/.local/share/godot/export_templates/4.5.stable/windows_release_x86_64_console.exe
+/github/home/.local/share/godot/export_templates/4.5.stable/web_dlink_nothreads_release.zip
+/github/home/.local/share/godot/export_templates/4.5.stable/visionos.zip
+/github/home/.local/share/godot/export_templates/4.5.stable/windows_release_x86_32_console.exe
 == android/build listing ==
 total 84
-drwxr-xr-x  8 root root  4096 Jul  9 09:17 .
-drwxr-xr-x  3 root root  4096 Jul  9 09:17 ..
--rw-r--r--  1 root root     0 Jul  9 09:17 .gdignore
+drwxr-xr-x  8 root root  4096 Jul  9 09:26 .
+drwxr-xr-x  3 root root  4096 Jul  9 09:26 ..
+-rw-r--r--  1 root root     0 Jul  9 09:26 .gdignore
 -rw-rw-r--  1 root root  2010 Sep 15  2025 AndroidManifest.xml
 drwxrwxr-x  2 root root  4096 Sep 15  2025 assetPackInstallTime
 drwxrwxr-x  2 root root  4096 Sep 15  2025 assets
@@ -57,3 +94,6 @@ drwxrwxr-x  3 root root  4096 Sep 15  2025 src
 YES
 == gradlew present? ==
 YES
+== libs dir recursive ==
+android/build/libs/release/godot-lib.template_release.aar
+android/build/libs/debug/godot-lib.template_debug.aar
