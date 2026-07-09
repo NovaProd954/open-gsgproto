@@ -53,6 +53,8 @@ jobs:
             find / -maxdepth 6 -path "*build-tools*" -type d 2>/dev/null | head -30 || true
             echo "== android_source.zip (gradle build template) =="
             find ~/.local/share/godot/export_templates -iname "android_source.zip" 2>/dev/null || true
+            echo "== full export_templates dir listing =="
+            find ~/.local/share/godot/export_templates -maxdepth 2 -type f 2>/dev/null || true
           } | tee ci-logs/diagnose.txt
 
       - name: Install Android Gradle build template
@@ -71,6 +73,8 @@ jobs:
             test -f android/build/build.gradle && echo YES || echo NO
             echo "== gradlew present? =="
             test -f android/build/gradlew && echo YES || echo NO
+            echo "== libs dir recursive =="
+            find android/build/libs -type f 2>/dev/null || echo "no libs dir"
           } | tee -a ci-logs/diagnose.txt
 
       - name: Export debug APK
