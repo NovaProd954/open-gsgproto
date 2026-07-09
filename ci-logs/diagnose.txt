@@ -3,14 +3,19 @@ GITHUB_WORKFLOW_REF=NovaProd954/open-gsgproto/.github/workflows/android-build.ym
 HOME=/github/home
 GODOT_VERSION=4.5
 ANDROID_HOME=/usr/lib/android-sdk
-ACTIONS_ORCHESTRATION_ID=12ab7a6d-89b3-4a71-bd93-e3c9d8cb8edd.export-android-debug.__default
+ACTIONS_ORCHESTRATION_ID=d22e2fc5-5bf5-4f4d-a62b-b7ea1fea956a.export-android-debug.__default
 GITHUB_JOB=export-android-debug
 PATH=/usr/lib/android-sdk/cmdline-tools/cmdline-tools/bin:/opt/butler/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 GITHUB_WORKFLOW=Android Debug Build
-== which adb / sdk tools ==
+== which adb / java / sdk tools ==
 /usr/bin/adb
+/usr/bin/java
+openjdk version "17.0.16" 2025-07-15
+OpenJDK Runtime Environment (build 17.0.16+8-Ubuntu-0ubuntu124.04.1)
+OpenJDK 64-Bit Server VM (build 17.0.16+8-Ubuntu-0ubuntu124.04.1, mixed mode, sharing)
 == editor_settings tres (keystore/sdk lines) ==
 -- /github/home/.config/godot/editor_settings-4.5.tres --
+export/android/java_sdk_path = "/usr/lib/jvm/java-17-openjdk-amd64"
 export/android/android_sdk_path = "/usr/lib/android-sdk"
 export/android/debug_keystore = "/root/debug.keystore"
 export/android/debug_keystore_user = "androiddebugkey"
@@ -28,3 +33,5 @@ export/android/shutdown_adb_on_exit = true
 /usr/lib/android-sdk/build-tools/33.0.2/lib64
 /usr/lib/android-sdk/build-tools/33.0.2/lib
 /usr/lib/android-sdk/build-tools/33.0.2/renderscript
+== android_source.zip (gradle build template) ==
+/github/home/.local/share/godot/export_templates/4.5.stable/android_source.zip

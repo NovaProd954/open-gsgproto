@@ -435,7 +435,6 @@ Class 'VisualShaderConversionPlugin' is not exposed, skipping.
 Class 'VoxelGIEditorPlugin' is not exposed, skipping.
 Class 'WindowWrapper' is not exposed, skipping.
 Loaded system CA certificates
-Could not find version of build tools that matches Target SDK, using 33.0.2
 [   0% ] [90m[1mfirst_scan_filesystem[22m | Started Project initialization (5 steps)[39m[0m
 [  16% ] [90m[1mfirst_scan_filesystem[22m | Loading global class names...[39m[0m
 [  33% ] [90m[1mfirst_scan_filesystem[22m | Verifying GDExtensions...[39m[0m
@@ -486,37 +485,37 @@ GDScript: Reloading: res://addons/map_editor/country_editor.gd
 [  72% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
 [  81% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
 [   0% ] [90m[1mreimport[22m | Executing pre-reimport operations...[39m[0m
-[   0% ] [90m[1mreimport[22m | generate_borders.glsl[39m[0m
 EditorFileSystem: Importing file: res://shaders/generate_borders.glsl
 EditorFileSystem: Importing file: res://shaders/generate_color_lookup.glsl
 EditorFileSystem: Importing file: res://shaders/generate_color_map.glsl
-EditorFileSystem: "res://shaders/generate_color_lookup.glsl" import took 102 ms.
+[   0% ] [90m[1mreimport[22m | generate_borders.glsl[39m[0m
+EditorFileSystem: "res://shaders/generate_borders.glsl" import took 120 ms.
 EditorFileSystem: Importing file: res://shaders/mask_political_map.glsl
 [   9% ] [90m[1mreimport[22m | generate_color_lookup.glsl[39m[0m
-EditorFileSystem: "res://shaders/generate_color_map.glsl" import took 102 ms.
+EditorFileSystem: "res://shaders/generate_color_map.glsl" import took 120 ms.
 [  18% ] [90m[1mreimport[22m | generate_color_map.glsl[39m[0m
-EditorFileSystem: "res://shaders/generate_borders.glsl" import took 102 ms.
+EditorFileSystem: "res://shaders/generate_color_lookup.glsl" import took 123 ms.
 [  27% ] [90m[1mreimport[22m | mask_political_map.glsl[39m[0m
-EditorFileSystem: "res://shaders/mask_political_map.glsl" import took 2 ms.
-EditorFileSystem: Importing file: res://assets/colormap_water.png
-EditorFileSystem: Importing file: res://assets/color_map.png
+EditorFileSystem: "res://shaders/mask_political_map.glsl" import took 3 ms.
 [  36% ] [90m[1mreimport[22m | generate_borders.glsl[39m[0m
+EditorFileSystem: Importing file: res://assets/color_map.png
+EditorFileSystem: Importing file: res://assets/colormap_water.png
 EditorFileSystem: Importing file: res://assets/color_lookup_map.png
-EditorFileSystem: "res://assets/color_map.png" import took 5 ms.
+EditorFileSystem: "res://assets/color_map.png" import took 7 ms.
 EditorFileSystem: Importing file: res://assets/mask_political_map.png
 [  45% ] [90m[1mreimport[22m | generate_color_lookup.glsl[39m[0m
-etcpak: Encoding took 12 ms.
-EditorFileSystem: "res://assets/colormap_water.png" import took 121 ms.
+etcpak: Encoding took 25 ms.
+EditorFileSystem: "res://assets/colormap_water.png" import took 283 ms.
 EditorFileSystem: Importing file: res://assets/provinces.bmp
 [  54% ] [90m[1mreimport[22m | generate_color_map.glsl[39m[0m
-EditorFileSystem: "res://assets/mask_political_map.png" import took 537 ms.
+EditorFileSystem: "res://assets/mask_political_map.png" import took 612 ms.
 EditorFileSystem: Importing file: res://icon.svg
 [  63% ] [90m[1mreimport[22m | mask_political_map.glsl[39m[0m
-EditorFileSystem: "res://icon.svg" import took 3 ms.
+EditorFileSystem: "res://icon.svg" import took 8 ms.
 [  72% ] [90m[1mreimport[22m | colormap_water.png[39m[0m
-EditorFileSystem: "res://assets/color_lookup_map.png" import took 590 ms.
+EditorFileSystem: "res://assets/color_lookup_map.png" import took 786 ms.
 [  81% ] [90m[1mreimport[22m | color_lookup_map.png[39m[0m
-EditorFileSystem: "res://assets/provinces.bmp" import took 599 ms.
+EditorFileSystem: "res://assets/provinces.bmp" import took 743 ms.
 [  90% ] [90m[1mreimport[22m | Finalizing Asset Import...[39m[0m
 [92m[ DONE ][39m [1mreimport[22m
 [0m
@@ -524,8 +523,8 @@ EditorFileSystem: "res://assets/provinces.bmp" import took 599 ms.
 [   0% ] [90m[1mreimport[22m | Executing post-reimport operations...[39m[0m
 [92m[ DONE ][39m [1mreimport[22m
 [0m
-Could not find version of build tools that matches Target SDK, using 33.0.2
 ERROR: Cannot export project with preset "Android" due to configuration errors:
+"Min SDK" cannot be lower than 24, which is the version needed by the Godot library.
 
    at: _fs_changed (editor/editor_node.cpp:1259)
 ERROR: Project export for preset "Android" failed.
