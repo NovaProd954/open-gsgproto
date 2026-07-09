@@ -64,7 +64,14 @@ jobs:
           mkdir -p android/build
           unzip -o -q "$TEMPLATE_ZIP" -d android/build
           touch android/build/.gdignore
-          ls -la android/build | head -20
+          {
+            echo "== android/build listing =="
+            ls -la android/build
+            echo "== build.gradle present? =="
+            test -f android/build/build.gradle && echo YES || echo NO
+            echo "== gradlew present? =="
+            test -f android/build/gradlew && echo YES || echo NO
+          } | tee -a ci-logs/diagnose.txt
 
       - name: Export debug APK
         id: export
