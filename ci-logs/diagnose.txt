@@ -3,7 +3,7 @@ GITHUB_WORKFLOW_REF=NovaProd954/open-gsgproto/.github/workflows/android-build.ym
 HOME=/github/home
 GODOT_VERSION=4.5
 ANDROID_HOME=/usr/lib/android-sdk
-ACTIONS_ORCHESTRATION_ID=ee8a1b07-1c24-41a8-b2df-b4ee2e30d60e.export-android-debug.__default
+ACTIONS_ORCHESTRATION_ID=707ef482-d567-4f61-99bb-20bbc1c42c4c.export-android-debug.__default
 GITHUB_JOB=export-android-debug
 PATH=/usr/lib/android-sdk/cmdline-tools/cmdline-tools/bin:/opt/butler/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 GITHUB_WORKFLOW=Android Debug Build
@@ -37,9 +37,9 @@ export/android/shutdown_adb_on_exit = true
 /github/home/.local/share/godot/export_templates/4.5.stable/android_source.zip
 == android/build listing ==
 total 84
-drwxr-xr-x  8 root root  4096 Jul  9 09:09 .
-drwxr-xr-x  3 root root  4096 Jul  9 09:09 ..
--rw-r--r--  1 root root     0 Jul  9 09:09 .gdignore
+drwxr-xr-x  8 root root  4096 Jul  9 09:17 .
+drwxr-xr-x  3 root root  4096 Jul  9 09:17 ..
+-rw-r--r--  1 root root     0 Jul  9 09:17 .gdignore
 -rw-rw-r--  1 root root  2010 Sep 15  2025 AndroidManifest.xml
 drwxrwxr-x  2 root root  4096 Sep 15  2025 assetPackInstallTime
 drwxrwxr-x  2 root root  4096 Sep 15  2025 assets
