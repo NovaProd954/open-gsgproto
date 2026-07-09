@@ -61,20 +61,17 @@ jobs:
         shell: bash
         run: |
           set -e
-          TEMPLATE_ZIP=$(find ~/.local/share/godot/export_templates -iname "android_source.zip" | head -1)
-          echo "Using template: $TEMPLATE_ZIP"
-          mkdir -p android/build
-          unzip -o -q "$TEMPLATE_ZIP" -d android/build
-          touch android/build/.gdignore
+          echo "Pre-heating .godot/ import cache..."
+          godot --headless --editor --quit || true
+          echo "Installing Android build template via Godot CLI..."
+          godot --headless --verbose --install-android-build-template
           {
             echo "== android/build listing =="
             ls -la android/build
             echo "== build.gradle present? =="
             test -f android/build/build.gradle && echo YES || echo NO
-            echo "== gradlew present? =="
-            test -f android/build/gradlew && echo YES || echo NO
-            echo "== libs dir recursive =="
-            find android/build/libs -type f 2>/dev/null || echo "no libs dir"
+            echo "== version marker files =="
+            find android -maxdepth 2 -iname "*version*" 2>/dev/null || true
           } | tee -a ci-logs/diagnose.txt
 
       - name: Export debug APK
