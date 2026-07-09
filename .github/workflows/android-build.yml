@@ -39,18 +39,32 @@ jobs:
         run: |
           {
             echo "== env =="
-            env | grep -i -E "android|godot|home" || true
-            echo "== which adb / sdk tools =="
+            env | grep -i -E "android|godot|home|java" || true
+            echo "== which adb / java / sdk tools =="
             which adb || echo "adb not found"
+            which java && java -version 2>&1 || echo "java not found"
             echo "== editor_settings tres (keystore/sdk lines) =="
-            find ~/.config/godot /root/.config/godot -name "editor_settings-*.tres" 2>/dev/null -exec echo "-- {} --" \; -exec grep -i -E "keystore|android_sdk|adb" {} \; || true
+            find ~/.config/godot /root/.config/godot -name "editor_settings-*.tres" 2>/dev/null -exec echo "-- {} --" \; -exec grep -i -E "keystore|android_sdk|adb|java" {} \; || true
             echo "== looking for debug.keystore on disk =="
             find / -iname "debug.keystore" 2>/dev/null || true
             echo "== looking for android sdk dirs =="
             find / -maxdepth 4 -iname "*android*sdk*" -o -iname "cmdline-tools" 2>/dev/null | head -30 || true
             echo "== build-tools dirs =="
             find / -maxdepth 6 -path "*build-tools*" -type d 2>/dev/null | head -30 || true
+            echo "== android_source.zip (gradle build template) =="
+            find ~/.local/share/godot/export_templates -iname "android_source.zip" 2>/dev/null || true
           } | tee ci-logs/diagnose.txt
+
+      - name: Install Android Gradle build template
+        shell: bash
+        run: |
+          set -e
+          TEMPLATE_ZIP=$(find ~/.local/share/godot/export_templates -iname "android_source.zip" | head -1)
+          echo "Using template: $TEMPLATE_ZIP"
+          mkdir -p android/build
+          unzip -o -q "$TEMPLATE_ZIP" -d android/build
+          touch android/build/.gdignore
+          ls -la android/build | head -20
 
       - name: Export debug APK
         id: export
